@@ -17,13 +17,8 @@
     { "src": "/(.*)", "dest": "/backend/$1" }
   ],
   "scripts": {
-    "build":"npm --prefix ./Telegram-Clon run build",
-    "Telegram-Clon": {
-      "install": "npm --prefix ./Telegram-Clon install",
-      "build": "npm --prefix ./Telegram-Clon run build"
-    },
-    "backend": {
-      "install": "npm --prefix ./backend install"
-    }
+    "postinstall": "npm run install-all",
+    "install-all": "npm --prefix ./Telegram-Clon install && npm --prefix ./backend install",
+    "build": "npm --prefix ./Telegram-Clon run build"
   }
 }
