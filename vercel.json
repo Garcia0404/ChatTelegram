@@ -1,0 +1,28 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "Telegram-Clon/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "Telegram-Clon/dist"
+      }
+    },
+    {
+      "src": "backend/package.json",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/backend/$1" }
+  ],
+  "scripts": {
+    "Telegram-Clon": {
+      "install": "npm --prefix ./Telegram-Clon install",
+      "build": "npm --prefix ./Telegram-Clon run build"
+    },
+    "backend": {
+      "install": "npm --prefix ./backend install"
+    }
+  }
+}
