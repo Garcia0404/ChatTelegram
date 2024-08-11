@@ -3,10 +3,7 @@
   "builds": [
     {
       "src": "Telegram-Clon/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "Telegram-Clon/dist"
-      }
+      "use": "@vercel/static-build"
     },
     {
       "src": "backend/package.json",
